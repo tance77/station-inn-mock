@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router';
                 <div class="absolute inset-0 bg-linear-to-r from-black/55 via-black/25 to-transparent"></div>
                 <div class="absolute inset-y-0 left-0 flex max-w-xl flex-col justify-center gap-4 px-6 text-background sm:px-10">
                     <p class="text-xs font-semibold tracking-[0.3em] text-background/80 uppercase">Long-Term Stay</p>
-                    <h2 class="font-display text-3xl sm:text-4xl">Interested in staying with us for a day, or two, or three?</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl">Interested in staying with us for a week, or two, or three?</h2>
                     <p class="text-sm text-background/80">Inquire about about extended stays below.</p>
                     <div class="pt-2">
                         <Button asChild class="bg-background text-foreground hover:bg-background/90">

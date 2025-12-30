@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import LongTermStay from '@/components/LongTermStay.vue';
+import PageHero from '@/components/PageHero.vue';
 import RoomCarousel from '../components/RoomCarousel.vue';
 import ServicesAmenities from '@/components/ServicesAmenities.vue';
 import {Button} from '@/components/ui/button';
@@ -118,22 +119,22 @@ const roomSections = [
 
 <template>
   <div>
-    <section class="bg-background">
-      <div class="mx-auto max-w-6xl space-y-5">
-        <p class="text-xs font-semibold tracking-[0.3em] text-muted-foreground uppercase">Rooms &amp; Suites</p>
-        <h1 class="font-display text-3xl text-foreground sm:text-4xl">There’s a reason Station House Inn has the most
-          comfortable rooms on the road.</h1>
-        <p class="text-muted-foreground">
-          On site are 96 recently renovated, stylish, and well-appointed rooms. All rooms feature individual heat/air
-          conditioning control, color television, and tastefully rustic decor. Plenty of ice cubes handy, too.
-        </p>
-        <p class="text-sm text-muted-foreground">
-          Explore all our amenities
-          <RouterLink class="underline underline-offset-4 hover:text-foreground" to="/activities">here</RouterLink>
-          .
-        </p>
-      </div>
-    </section>
+    <PageHero
+      eyebrow="Rooms &amp; Suites"
+      title="There’s a reason Station House Inn has the most comfortable rooms on the road."
+      image="/images/rooms/roomy%20king/roomy-king-04.webp"
+    >
+      <p class="text-muted-foreground">
+        On site are 96 recently renovated, stylish, and well-appointed rooms. All rooms feature individual heat/air
+        conditioning control, color television, and tastefully rustic decor. Plenty of ice cubes handy, too.
+      </p>
+      <p class="text-sm text-muted-foreground">
+        Explore all our amenities
+        <Button variant="link" asChild size="sm" class="p-0 m-0">
+          <RouterLink to="/amenities">here.</RouterLink>
+        </Button>
+      </p>
+    </PageHero>
     <section class="bg-card">
       <div class="mx-auto max-w-6xl space-y-10">
         <div class="space-y-3">
@@ -141,8 +142,8 @@ const roomSections = [
           <h2 class="font-display text-3xl text-foreground sm:text-4xl">Find your fit</h2>
           <p class="text-muted-foreground">Thoughtful layouts with room to recharge between adventures.</p>
         </div>
-                <div class="space-y-20">
-                    <div v-for="room in roomSections" :key="room.title" class="grid gap-10 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div class="space-y-20">
+          <div v-for="room in roomSections" :key="room.title" class="grid gap-10 lg:gap-10 lg:grid-cols-[1.1fr_0.9fr]">
             <RoomCarousel :images="room.images" :alt="room.title"/>
             <div class="flex flex-col justify-center space-y-6">
               <div class="space-y-2">
@@ -153,7 +154,7 @@ const roomSections = [
               <div class="h-px w-full bg-border/60"></div>
               <div class="space-y-3">
                 <p class="text-xs font-semibold tracking-[0.3em] text-muted-foreground uppercase">Features</p>
-                                <ul class="grid grid-cols-2 gap-2 text-sm text-muted-foreground sm:grid-cols-2">
+                <ul class="grid grid-cols-2 gap-2 text-sm text-muted-foreground sm:grid-cols-2">
                   <li v-for="feature in room.features" :key="feature" class="flex items-start gap-2">
                     <span
                         class="shrink-0 mt-0.5 inline-flex h-4 w-4 items-center justify-center text-foreground">
@@ -168,12 +169,12 @@ const roomSections = [
                   </li>
                 </ul>
               </div>
-                            <div class="pt-2">
-                                <Button asChild class="w-full sm:w-auto">
-                                    <a
-                                        href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34"
-                                        rel="noreferrer"
-                                        target="_blank"
+              <div class="pt-2">
+                <Button asChild class="w-full sm:w-auto">
+                  <a
+                      href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34"
+                      rel="noreferrer"
+                      target="_blank"
                   >
                     Check Availability
                   </a>
@@ -185,6 +186,6 @@ const roomSections = [
       </div>
     </section>
     <ServicesAmenities/>
-        <LongTermStay />
-    </div>
+    <LongTermStay/>
+  </div>
 </template>

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import AboutPage from './pages/AboutPage.vue';
 import AccessibilityPage from './pages/AccessibilityPage.vue';
 import ActivitiesPage from './pages/ActivitiesPage.vue';
+import AmenitiesPage from './pages/AmenitiesPage.vue';
 import BachelorettePage from './pages/BachelorettePage.vue';
 import BeachPassesPage from './pages/BeachPassesPage.vue';
 import CabanasPage from './pages/CabanasPage.vue';
@@ -39,6 +40,7 @@ const router = createRouter({
         { path: '/home', redirect: '/' },
         { path: '/about-station-house', name: 'about', component: AboutPage },
         { path: '/rooms', name: 'rooms', component: RoomsPage },
+        { path: '/amenities', name: 'amenities', component: AmenitiesPage },
         { path: '/wifi-access', name: 'wifi-access', component: WifiAccessPage },
         { path: '/accessibility', name: 'accessibility', component: AccessibilityPage },
         { path: '/gallery', name: 'gallery', component: GalleryPage },

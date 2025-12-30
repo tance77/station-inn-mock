@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PageHero from '@/components/PageHero.vue';
 import { Button } from '@/components/ui/button';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
@@ -75,28 +76,22 @@ onBeforeUnmount(() => {
 
 <template>
     <div>
-        <section class="section-texture section-texture--sand bg-background">
-            <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
-                <div class="space-y-5">
-                    <p class="text-xs font-semibold tracking-[0.3em] text-muted-foreground uppercase">
-                        About The Station House Inn - South Lake Tahoe
-                    </p>
-                    <h1 class="font-display text-3xl text-foreground sm:text-4xl">Welcome to Tahoe’s south side</h1>
-                    <p class="text-lg text-foreground">Between mountain and lake, since 1972</p>
-                    <p class="text-muted-foreground">
-                        The Station House Inn has been hosting travelers, vacationers and adventurers since 1972. Here the fine art of relaxing may be cultivated to its fullest. Bask in the warm sunshine and enjoy an invigorating dip in the pool (seasonal). For the ambitious, Lake Tahoe’s top attractions are within walking distance or a short drive. Right outside our doors are the beautiful alpine lake, private beach, ski resorts, restaurants, shops and casinos. Whether you're here to relax or work, the Station House Inn is your basecamp to explore and unwind.
-                    </p>
-                    <div class="pt-2">
-                        <Button asChild>
-                            <a href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer">Book Now</a>
-                        </Button>
-                    </div>
-                </div>
-                <div class="polaroid-card -rotate-1 lg:-rotate-2 lg:translate-y-4">
-                    <img alt="Station House Inn building" class="polaroid-img h-80 sm:h-104" src="/images/about/station_house_inn_building_anim_01.gif" />
-                </div>
+        <PageHero
+            eyebrow="About The Station House Inn - South Lake Tahoe"
+            title="Welcome to Tahoe’s south side"
+            subtitle="Between mountain and lake, since 1972"
+            image="/images/about/station_house_inn_building_anim_01.gif"
+            section-class="section-texture section-texture--sand bg-background"
+        >
+            <p class="text-muted-foreground">
+                The Station House Inn has been hosting travelers, vacationers and adventurers since 1972. Here the fine art of relaxing may be cultivated to its fullest. Bask in the warm sunshine and enjoy an invigorating dip in the pool (seasonal). For the ambitious, Lake Tahoe’s top attractions are within walking distance or a short drive. Right outside our doors are the beautiful alpine lake, private beach, ski resorts, restaurants, shops and casinos. Whether you're here to relax or work, the Station House Inn is your basecamp to explore and unwind.
+            </p>
+            <div>
+                <Button asChild size="lg">
+                    <a href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer">Book Now</a>
+                </Button>
             </div>
-        </section>
+        </PageHero>
         <section class="section-texture section-texture--card bg-card">
             <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.25fr_0.75fr]">
                 <div class="lg:order-first">

@@ -2,6 +2,7 @@
 interface FeatureItem {
     title: string;
     description: string;
+    icon?: string;
 }
 
 const props = defineProps<{
@@ -29,12 +30,21 @@ const props = defineProps<{
             </div>
             <div class="mt-10 grid gap-6 md:grid-cols-3">
                 <article v-for="item in items" :key="item.title" class="rounded-3xl border border-border/60 p-6 shadow-sm" :class="tone === 'dark' ? 'border-background/20 bg-foreground text-background' : 'bg-background'">
-                    <div class="flex h-12 w-12 items-center justify-center rounded-full" :class="tone === 'dark' ? 'bg-background text-foreground' : 'bg-foreground text-background'">✦</div>
+                    <div
+                        class="flex h-12 w-12 items-center justify-center rounded-full"
+                        :class="tone === 'dark' ? 'bg-background text-foreground' : 'bg-foreground text-background'"
+                    >
+                        <span v-if="item.icon" class="h-6 w-6" v-html="item.icon"></span>
+                        <span v-else>✦</span>
+                    </div>
                     <h3 class="font-display mt-6 text-xl">{{ item.title }}</h3>
                     <p class="mt-3 text-sm" :class="tone === 'dark' ? 'text-muted-foreground/80' : 'text-muted-foreground'">
                         {{ item.description }}
                     </p>
                 </article>
+            </div>
+            <div v-if="$slots.default" class="mt-10">
+                <slot />
             </div>
         </div>
     </section>
