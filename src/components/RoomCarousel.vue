@@ -44,7 +44,7 @@ const onPointerLeave = () => {
 </script>
 
 <template>
-    <div class="relative h-56 touch-pan-y overflow-hidden  select-none" @pointerdown="onPointerDown" @pointerup="onPointerUp" @pointerleave="onPointerLeave">
+    <div class="relative min-h-56 touch-pan-y overflow-hidden  select-none" @pointerdown="onPointerDown" @pointerup="onPointerUp" @pointerleave="onPointerLeave">
         <img v-for="(image, index) in images" :key="image" :alt="alt" class="absolute inset-0 h-full w-full object-cover transition-opacity duration-700" :class="index === activeIndex ? 'opacity-100' : 'opacity-0'" :src="image" />
         <button v-if="hasMultiple" class="absolute top-1/2 left-3 -translate-y-1/2 rounded-full border border-border/40 bg-background/80 p-2 text-foreground shadow-sm transition hover:bg-background" type="button" aria-label="Previous image" @click="goPrev">
             <span aria-hidden="true">‹</span>

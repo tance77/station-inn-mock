@@ -13,7 +13,6 @@ const rooms = [
             '/images/rooms/roomy%20king/roomy-king-02.webp',
             '/images/rooms/roomy%20king/roomy-king-04.webp',
             '/images/rooms/roomy%20king/roomy-king-06.webp',
-            '/images/rooms/roomy%20king/roomy-king-09.webp',
             '/images/rooms/roomy%20king/roomy-king-07.webp',
             '/images/rooms/roomy%20king/roomy-king-08.webp',
         ],
@@ -49,7 +48,7 @@ const rooms = [
                             <li v-for="bullet in room.bullets" :key="bullet">• {{ bullet }}</li>
                         </ul>
                         <Button asChild variant="link" class="px-0 tracking-[0.2em] uppercase">
-                            <a href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer"> Check availability </a>
+                            <a href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer" target="_blank"> Check availability </a>
                         </Button>
                     </div>
                 </article>

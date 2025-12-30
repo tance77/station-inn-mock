@@ -32,7 +32,7 @@ const links = [
             <div class="flex items-center gap-4">
               <div class="flex flex-col xl:space-y-2 justify-end">
                 <Button asChild size="lg" class="hidden sm:inline-flex">
-                  <a href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer"> Book Now </a>
+                  <a target="_blank" href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer"> Book Now </a>
                 </Button>
                 <a class="hidden items-center gap-2 text-xs font-semibold tracking-[0.2em] text-secondary-foreground/70 uppercase transition hover:text-secondary-foreground 2xl:flex" href="tel:+15305421101">
                   <svg class="size-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -90,7 +90,7 @@ const links = [
                             </DrawerClose>
                             <DrawerClose asChild>
                                 <Button asChild class="w-full" size="lg">
-                                    <a href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer">
+                                    <a target="_blank" href="https://app.mews.com/distributor/89b238cd-c015-499d-a55e-b31c01722a34" rel="noreferrer">
                                         Book Now
                                     </a>
                                 </Button>

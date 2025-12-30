@@ -146,13 +146,47 @@
 }
 
 @layer components {
+    .section-texture {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-texture::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.06) 1px, transparent 0),
+            linear-gradient(120deg, rgba(0, 0, 0, 0.04), transparent 40%, rgba(0, 0, 0, 0.03));
+        background-size: 20px 20px, 100% 100%;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    .section-texture--card::before {
+        opacity: 0.35;
+    }
+
+    .section-texture--accent::before {
+        background-image:
+            radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.12) 1px, transparent 0),
+            linear-gradient(120deg, rgba(255, 255, 255, 0.08), transparent 40%, rgba(255, 255, 255, 0.06));
+        opacity: 0.45;
+    }
+
+    .section-texture > * {
+        position: relative;
+        z-index: 1;
+    }
+
     .polaroid-card {
-        @apply  border border-muted bg-white px-6 pt-6 pb-16 dark:border-white/10 dark:bg-white/10;
+        @apply border border-muted bg-white px-3 pt-3 pb-8 dark:border-white/10 dark:bg-white/10;
     }
 
     .polaroid-img {
-        @apply h-full w-full  object-cover;
+        @apply h-full w-full object-cover;
     }
+
 
     .amenity-grid > div {
         border-bottom: 1px solid oklch(var(--border));
@@ -221,6 +255,10 @@
             transition: none;
             transition-delay: 0ms;
         }
+    }
+
+    .masonry-item {
+        break-inside: avoid;
     }
 }
 
